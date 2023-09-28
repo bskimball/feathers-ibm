@@ -1,0 +1,54 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "./public/",
+  "origins": [
+    "http://localhost:3030", "http://localhost:5173"
+  ],
+  "paginate": {
+    "default": 100,
+    "max": 500
+  },
+  "db2Client": {
+    "client": "ibmi"
+  },
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "EEwENg5mO4GwIOMr80n4iPZxOMUgJ52O",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": ["http://localhost:3030", "http://localhost:5173"],
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "oauth": {
+      "google": {
+        "key": "<Client ID>",
+        "secret": "<Client secret>"
+      },
+      "facebook": {
+        "key": "<Client ID>",
+        "secret": "<Client secret>"
+      },
+      "twitter": {
+        "key": "<Client ID>",
+        "secret": "<Client secret>"
+      },
+      "github": {
+        "key": "<Client ID>",
+        "secret": "<Client secret>"
+      }
+    }
+  }
+}
